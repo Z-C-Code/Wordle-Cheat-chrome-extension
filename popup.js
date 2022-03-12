@@ -23,8 +23,8 @@ const cheat = ["cigar","rebut","sissy","humph","awake","blush","focal","evade","
 
 const word = (cheat[265+diffrence])
 
-document.getElementById("answer").innerHTML = word;
 
+// document.getElementById("answer").innerHTML = word;
 
 
 // DATE
@@ -50,10 +50,27 @@ let count = 0;
 
 let btn_left = document.getElementById("button_left")
 let btn_right = document.getElementById("button_right")
-
+let btn_answer = document.getElementById("button_answer")
+let btn_reset = document.getElementById("button_reset")
 
 btn_left.addEventListener("click",left);
 btn_right.addEventListener("click",right);
+btn_answer.addEventListener("click",answer);
+btn_reset.addEventListener("click",reset);
+
+function reset(){
+    console.log("Reset button has been pressed!");
+}
+
+function answer(){
+    console.log("answer button has been clicked!")
+    document.getElementById("answer").innerHTML = word;
+    btn_answer.style.display = "none";
+    btn_left.style.display = "block";
+    btn_right.style.display = "block";
+    btn_reset.style.display = "block";
+}
+
 function left(){
     count -= 1;
     console.log(count)
@@ -117,4 +134,3 @@ function right(){
 
     document.getElementById("date").innerHTML = today;
 }
-

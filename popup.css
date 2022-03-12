@@ -418,12 +418,11 @@ body {
 #right {
     margin-left: 180px;
     margin-top: 0px;
-
 }
 
 #left {
     margin-left: -10px;
-    margin-top: -48px;
+    margin-top: -36px;
 
 }
 
@@ -488,9 +487,53 @@ body {
 }
 
 #button_reset {
+    margin-top: 45%;
     margin-left: 5%;
     color: #14141400;
     background-color: #14141400;
     border: none;
     width: 100%;  
+}
+
+.answer__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px ;
+    height: 60%;
+    width: 60%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #3d7e86;
+    color: #fff;
+    transition: transform 250ms;
+    /* margin-bottom: -100px; */
+    margin-left: 45px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+
+#button_answer {
+    margin-top: 25%;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: large;
+    cursor: pointer;
+    font: bolder;
+    font-weight: 500;
+    margin-left: 20%;
+    text-align: center;
+}
+
+.next_button {
+    display: none;
+}
+
+#button_reset {
+    display: none;
 }
