@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" id="home">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunkyPanda</title>
+    <!-- LINKS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icon.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="/app.js" defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">   </i> <i class="fa-solid fa-code"> </i>   FunkyPanda</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item"><a href="#home" class="navbar__links">Home</a></li>
+                <li class="navbar__item"><a href="#contact" class="navbar__links">Contact</a></li>
+                <li class="navbar__button"><a href="https://github.com/Funky-Panda" target="_blank" class="button">Git Hub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>WELCOME</h1>
+                <h2>To my website.</h2>
+                <P>see what makes us diffrent.</P>
+                <button class="main__button"><a href="#services">Projects</a></button>
+            </div>
+            <div class="main__img--container">
+                <img src="images/html_css - image.svg" alt="pic" id="main__img">
+            </div>
+        </div>
+    </div>
+    <!-- Cards -->
+    <div class="services" id="services">
+        <h1>What am I working on?</h1>
+        <div class="services__container">
+            <div class="services__card">
+                <h2>Youtube Downloader</h2>
+                <p>I made a script that runs every day at 18:30 on my rasperry pi zero and it scrapes the youtubes API to find the latest youtube video ID in the playlist and I put that into a youtube download which then waits for the usb to be plugged into the rasperry pi and then it automaticly transfers the .mp4 to the usb </p>
+                <button class="service__button"><a href="https://github.com/Funky-Panda/Automatic-Youtube-Playlist-Downloader" target="_blank">Open</a></button>
+            </div>
+            <div class="services__card" id="Discord__Bot">
+                <h2>Discord Bot</h2>
+                <p>I made this discord bot just after groove got shutdown it plays music from youtube or soundcloud though my bot, It also has other uses as well and it also uses slash commands </p>
+                <button class="service__button"><a href="https://github.com/Funky-Panda/Discord-Music-Bot-/blob/main/main.py" target="_blank">Open</a></button>
+            </div>
+            <div class="services__card" id="Website">
+                <h2>This website</h2>
+                <p>I started making this website becuase I wanted to learn a new language (javascript) and I did not know where to start so I thought lets learn basics of javascript and implament the skill into a website</p>
+                <button class="service__button"><a href="#home">Open</a></button>
+            </div>
+            <div class="services__card" id="Wordle">
+                <h2>Wordle Cheat</h2>
+                <p>This cheat tells you the exact word of the day and also has arrows to change the date which will tell you the word for tommarow</p>
+                <button class="service__button"><a href="https://github.com/Funky-Panda/Wordle-Cheat-chrome-extension" target="_blank" >Open</a></button>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Me -->
+    <div class="contact" id="contact">
+        <div class="contact__container">
+            <div class="contact__content">
+                <h1>Contact Me.</h1>
+                <div class="border"></div>
+                <form  class="contact-form" method="post" onsubmit="sendContact(event)">
+                    <input type="text" class="contact-form-text" placeholder="Your name" id="nameInput">
+                    <input type="info" class="contact-form-text" placeholder="Any form of communication e.g. discord/email (Not required)" id="emailInput">
+                    <textarea class="contact-form-text" placeholder="Your message" id="messageInput"></textarea>
+                    <input type="submit" class="contact-form-btn" value="Send">
+                    <!-- <div input type="submit" class="success" id="status" value="Send">Success</div> -->
+                    <!-- <div id="status"></div> -->
+                    <!-- <input type="submit" class="check_message" id="send-error-message" value="Send"> -->
+                    <img src="images/contact.svg" alt="pic" id="contact__img">
+                  </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
