@@ -59,7 +59,31 @@ btn_answer.addEventListener("click",answer);
 btn_reset.addEventListener("click",reset);
 
 function reset(){
+    document.getElementById("button_right").disabled = false;
+    document.getElementById("left").style.background = "white";
+    document.getElementById("right").style.background = "white";
+    document.getElementById("left").style.cursor = "pointer";
+    document.getElementById("right").style.cursor = "pointer";
+    document.getElementById("answer").innerHTML = word;
     console.log("Reset button has been pressed!");
+    // DATE
+    count = 0
+    var today = new Date();
+    console.log(count)
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; 
+    var yyyy = today.getFullYear();
+    if(dd<10) 
+    {
+        dd='0'+dd;
+    } 
+    if(mm<10) 
+    {
+        mm='0'+mm;
+    } 
+    today = dd+'-'+mm+'-'+yyyy;
+    console.log(today);
+    document.getElementById("date").innerHTML = today;
 }
 
 function answer(){
@@ -85,23 +109,19 @@ function left(){
     var dd = today.getDate()+count;
     var mm = today.getMonth()+1; 
     var yyyy = today.getFullYear();
+
     if(dd<10) 
     {
         dd='0'+dd;
     } 
-
     if(mm<10) 
     {
         mm='0'+mm;
     } 
-
-    
     today = dd+'-'+mm+'-'+yyyy;
     console.log(today);
-
-
     document.getElementById("date").innerHTML = today;
-
+	disableButton(dd)
 }
 
 function right(){
@@ -127,10 +147,31 @@ function right(){
     {
         mm='0'+mm;
     } 
-
-
     today = dd+'-'+mm+'-'+yyyy;
     console.log(today);
-
     document.getElementById("date").innerHTML = today;
+
+    // DISABLING BUTTON LEFT
+
+	disableButton(dd)
+
+}
+
+function disableButton(dd) {
+	   if(dd == 30) {
+        document.getElementById("button_right").disabled = true;
+        document.getElementById("right").style.background = "rgba(255, 255, 255, 0.171)";
+        document.getElementById("right").style.cursor = "default";
+    } else if(dd == 1){
+        document.getElementById("button_left").disabled = true;
+        document.getElementById("left").style.background = "rgba(255, 255, 255, 0.171)";
+        document.getElementById("left").style.cursor = "default";
+    }
+    else {
+        document.getElementById("button_right").disabled = false;
+        document.getElementById("left").style.background = "white";
+        document.getElementById("right").style.background = "white";
+        document.getElementById("left").style.cursor = "pointer";
+        document.getElementById("right").style.cursor = "pointer";
+    }
 }
