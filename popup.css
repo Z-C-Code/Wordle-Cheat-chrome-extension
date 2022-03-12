@@ -13,28 +13,6 @@ body {
     max-height:10px;
 }
 
-.navbar {
-    background-color: #141414;
-    height: 80px;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    font-family: 'Roboto', sans-serif;
-}
-
-.navbar__container{
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 50px;
-}
 
 .navbar__container h1 {
     margin-left: 25%;
@@ -56,114 +34,21 @@ body {
 }
 
 
-.navbar__menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    text-align: center;
-}
 
 
 
 
-.navbar__item{
-    height: 80px;
-}
 
 
-.navbar__links {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%; 
-}
 
-.navbar_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    width: 100%;
-}
 
-.button:hover {
-    background: #2d9dac;
-    transition: all 0.3s ease;
-    transform: translateY(-5px);
-}
 
-.navbar__links:hover {
-    color: #2d9dac;
-    transition: all 0.3s ease;
-}
+
 
 @media screen and (max-width: 960px){
- .navbar__container {
-    display: flex;
-    justify-content: space-between;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0;
- }
- .navbar__menu{
-     display: grid;
-     grid-template-columns: auto;
-     margin: 0;
-     width: 100%;
-     position: absolute;
-     top: -1000px;
-     opacity: 0;
-     transition: all 0.5s ease;
-     height: 50vh;
-     z-index: -1;
-     background: #14141402;     
- }
+ 
 
- .navbar__menu.active {
-     background: #141414;
-     top: 100%;
-     opacity: 1;
-     transition: all 0.5s ease;
-     z-index: 99;
-     height: 50vh;
-     font-size: 1.6rem;
- }
-
- #navbar__logo{
-     padding-left: 10px;
-     font-size: 30px;
- }
- .navbar__toggle .bar {
-     width: 25px;
-     height: 3px;
-     margin: 5px auto;
-     transition: all 0.3 ease-in-out;
-     background: #fff;
- }
-
- .navbar__item {
-     width: 100%;
- }
-
- .navbar__links {
-     text-align: center;
-     padding: 2rem;
-     width: 100%;
-     display: table;
- }
- #mobile-menu {
-     position: absolute;
-     top: 20%;
-     right: 5%;
-     transform: translate(5%,20%);
-     z-index: 9;
-     
- }
-
+ 
  .navbar__button {
      padding-bottom: 2rem;
      position: relative;
@@ -173,38 +58,6 @@ body {
      width: 60%;
  }
 
-  .button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-
-  }
-
-  .navbar__toggle .bar {
-      display: block;
-      cursor: pointer;
-  }
-
-  #mobile-menu.is-active .bar:nth-child(2) {
-      opacity: 0;
-      transition: all 0.3s ease;
-
-  }
-
-  #mobile-menu.is-active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-      transition: all 0.3s ease;
-      z-index: 9;
-
-
-  }
-
-  #mobile-menu.is-active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-      transition: all 0.3s ease;
-      z-index: 9;
-  }
 }
 
 /* Hero Section */
@@ -220,7 +73,7 @@ body {
     align-items: center;
     justify-self: center;
     margin: 0 0;
-    height: 83.3vh;
+    height: 40vh;
     background-color: #141414;
     z-index: 1;
     width: 100%;
@@ -252,7 +105,7 @@ body {
 }
 
 .main__content p {
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
     font-size: 2rem;
     font-weight: 500;
     color: rgb(255, 255, 255);
@@ -264,7 +117,6 @@ body {
     border: none;
     border-radius: 4px;
     color: #141414;
-    margin-top: 2rem;
     cursor: pointer;
     transition: all 0.35s;
     outline: none;
@@ -272,7 +124,6 @@ body {
 }
 
 .main__button a {
-    position: relative;
     z-index: 2;
     color: #fff;;
     text-decoration: none;
@@ -304,14 +155,7 @@ body {
     width: 100%;
 }
 
-.main__img--container {
-    text-align: right;
-}
 
-#main__img {
-    height: 100%;
-    width: 100%;
-}
 
 /* Mobile View */
 
@@ -323,17 +167,17 @@ body {
         justify-self: center;
         width: 100%;
         margin: 0 auto;
-        height: 90vh;
+        height: 40vh;
     }
 
     .main__content {
         text-align: center;
-        margin-bottom: rem;
+        margin-bottom: 0rem;
     }
 
     .main__content h1 {
         font-size: 2.5rem;
-        margin-top: 2rem;
+        margin-top: 0rem;
     }
 
     .main__content h2 {
@@ -342,15 +186,16 @@ body {
     }
 
     .main__content p {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         font-size: 1.5rem;
     }
+
 }
 
 @media screen and (max-width: 480px) {
     .main__content h1 {
         font-size: 2rem;
-        margin-top: 3rem;
+        margin-top: 15px;
     }
 
     .main__content h2 {
@@ -363,7 +208,7 @@ body {
 
     .main__button {
         padding: 3.5px 8px;
-        margin-top: 0;
+        margin-top: -50%;
     }
 
 }
@@ -426,20 +271,12 @@ body {
 
 }
 
-.navbar_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 1rem;
-    width: 100%;
-}
 
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    padding: 10px 20px;
     height: 75%;
     width: 75%;
     border: none;
@@ -448,7 +285,8 @@ body {
     background: #40a6b39d;
     color: #fff;
     transition: transform 250ms;
-    margin-top: -70px;
+    margin-top: -60%;
+
 }
 
 .button a {
@@ -467,7 +305,6 @@ body {
 }
 
 .navbar__button {
-    margin-top: -100px;
     font-size: 2rem;
     font-weight: 500;
     border: none;
@@ -487,7 +324,6 @@ body {
 }
 
 #button_reset {
-    margin-top: 45%;
     margin-left: 5%;
     color: #14141400;
     background-color: #14141400;
