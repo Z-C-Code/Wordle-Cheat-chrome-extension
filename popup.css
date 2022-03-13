@@ -35,7 +35,7 @@ body {
 @media screen and (max-width: 960px){
     
  .navbar__button {
-     margin-top: -16.5px;
+     margin-top: 40px;
      margin-left: 25%;
      padding-bottom: 2rem;
      position: relative;
@@ -47,7 +47,7 @@ body {
  
  .navbar__button a {
      font-size: 25px;
-     font-weight: 500;
+     font-weight: 5;
  }
 
 }
@@ -119,8 +119,9 @@ body {
     z-index: 2;
     color: #fff;;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     font-size: 0.5rem;
+    font-weight: 450;
 }
 
 .main__button:after {
@@ -191,8 +192,8 @@ body {
     }
 
     .main__content h2 {
-        padding-top: 10%;
-        padding-bottom: 10%;
+        padding-top: 8%;
+        padding-bottom: 8%;
         font-size: 3.5rem;
     }
 
@@ -230,7 +231,7 @@ body {
 }
 
 .arr:hover {
-    box-shadow: 0px 0px 20px 20px #0000007c;
+    box-shadow: 0px 0px 15px 15px #00e1ff21;
 }
 
 .arr div {
@@ -287,9 +288,8 @@ body {
 }
 
 .button:hover {
-    background: #2d9dac;
-    transition: all 0.3s ease;
-    transform: translateY(-1px);
+    background-color: #00e1ff63;
+    transition: transform 250ms;
 }
 
 .navbar__links:hover {
@@ -299,7 +299,6 @@ body {
 
 .navbar__button {
     font-size: 2rem;
-    font-weight: 500;
     border: none;
     border-radius: 4px;
     color: #14141400;
@@ -312,7 +311,7 @@ body {
     z-index: 2;
     color: #fff;;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     font-size: 1.3rem;
     padding-bottom: 20%;
 }
@@ -342,11 +341,15 @@ body {
     transition: transform 250ms;
     /* margin-bottom: -100px; */
     margin-left: 45px;
-    font-weight: 500;
     cursor: pointer;
     z-index: 2;
     text-align: center;
 }
+
+.answer__button a {
+    font-family: 'Roboto', sans-serif;
+}
+
 
 #button_answer {
     margin-top: 25%;
@@ -365,6 +368,10 @@ body {
     display: none;
 }
 
+#date {
+    padding-top: 5%;
+}
+
 #button_reset {
     display: none;
 }
@@ -375,7 +382,7 @@ body {
 }
 
 .solve__button {
-    margin-left: 32.25%;
+    margin-left: 31%;
     position: relative;
     background-image: #141414;
     border: none;
@@ -387,10 +394,9 @@ body {
     background: #40a6b39d;
     color: #fff;;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.75rem;
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 1.7rem;
     display: none;
-
 }
 
 
@@ -417,5 +423,11 @@ body {
 }
 
 #button_solve {
-    margin-bottom: 20%;
+    margin-top: -15%;
+    height: 50%;
+    width: 35%;
+}
+
+.solve__button a {
+    font-size: 25px;
 }

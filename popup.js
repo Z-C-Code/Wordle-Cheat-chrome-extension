@@ -180,20 +180,56 @@ function disableButton(dd) {
 }
 
 // SOLVE FUNCTION
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        // Get the current tab
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            getlocalData(tabs)
+        });
+        // Execute script in the current tab
+        //const fromPageLocalStore = await chrome.tabs.executeScript(tab.id, { code: `localStorage['${key}']` });
+
+        // Store the result  
+        //await chrome.storage.local.set({[key]:fromPageLocalStore[0]});
+    }
+    catch (err) {
+        // Log exceptions
+    }
+});
+
+function getlocalData(tab) {
+    const key = "gameState"
+    chrome.scripting.executeScript({ target: { tabId: tab[0].id, allFrames: true }, func: () => { return localStorage.getItem("nyt-wordle-state") } }, (result) => {
+        if (result) {
+            result = result[0].result
+        }
+        if (!result || !JSON.parse(result).solution) {
+            document.getElementById("button_solve").disabled = true;
+            document.getElementById("button_solve").style.background = "#1f2020c7";
+            document.getElementById("button_solve").style.cursor = "default";
+            // document.querySelector("body").innerText = "You dont seem on the wordle site,Try again in wordle site"
+            // document.querySelector("body").style.background = "red"
+            return;
+        }
+        result = JSON.parse(result)
+        answer.innerText = result.solution
+    });
+}
+
 
 document.getElementById("button_solve").addEventListener("click", () => {
     var word_on_screen = document.getElementById("answer").innerText;
     let answer = word_on_screen
     let r = answer.split("")
     chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
-        // r.forEach(element => {
-        //     chrome.scripting.executeScript({
-        //         target: { tabId: tab[0].id }, func: (e)=> {
+        r.forEach(element => {
+            chrome.scripting.executeScript({
+                target: { tabId: tab[0].id }, func: (e)=> {
                     
-        //             window.dispatchEvent(new KeyboardEvent("keydown", { key: "Backspace" }))
-        //         }
-        //     });
-        // });
+                    window.dispatchEvent(new KeyboardEvent("keydown", { key: "Backspace" }))
+                }
+            });
+        });
         r.forEach(element => {
             console.log(element)
             chrome.scripting.executeScript({
