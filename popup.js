@@ -53,11 +53,14 @@ let btn_right = document.getElementById("button_right")
 let btn_answer = document.getElementById("button_answer")
 let btn_reset = document.getElementById("button_reset")
 let btn_solve = document.getElementById("button_solve")
+let btn_website = document.getElementById("button_website")
+let date = document.getElementById("date")
 
 btn_left.addEventListener("click",left);
 btn_right.addEventListener("click",right);
 btn_answer.addEventListener("click",answer);
 btn_reset.addEventListener("click",reset);
+
 
 function reset(){
     document.getElementById("button_right").disabled = false;
@@ -95,6 +98,8 @@ function answer(){
     btn_right.style.display = "block";
     btn_reset.style.display = "block";
     btn_solve.style.display = "block";
+    date.style.display = "block";
+    btn_website.style.display = "none";
 }
 
 function left(){
@@ -156,7 +161,6 @@ function right(){
     // DISABLING BUTTON LEFT
 
 	disableButton(dd)
-
 }
 
 function disableButton(dd) {
@@ -164,6 +168,7 @@ function disableButton(dd) {
         document.getElementById("button_right").disabled = true;
         document.getElementById("right").style.background = "rgba(255, 255, 255, 0.171)";
         document.getElementById("right").style.cursor = "default";
+
     } else if(dd == 1){
         document.getElementById("button_left").disabled = true;
         document.getElementById("left").style.background = "rgba(255, 255, 255, 0.171)";
@@ -179,7 +184,12 @@ function disableButton(dd) {
     }
 }
 
+
+
+
+
 // SOLVE FUNCTION
+
 document.addEventListener('DOMContentLoaded', () => {
     try {
         // Get the current tab
@@ -215,7 +225,6 @@ function getlocalData(tab) {
         answer.innerText = result.solution
     });
 }
-
 
 document.getElementById("button_solve").addEventListener("click", () => {
     var word_on_screen = document.getElementById("answer").innerText;

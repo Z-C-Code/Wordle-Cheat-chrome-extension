@@ -65,7 +65,6 @@ body {
     align-items: center;
     justify-self: center;
     margin: 0 0;
-    height: 40vh;
     background-color: #141414;
     z-index: 1;
     width: 100%;
@@ -352,7 +351,7 @@ body {
 
 
 #button_answer {
-    margin-top: 25%;
+    margin-top: 10%;
     text-decoration: none;
     color: white;
     font-weight: 500;
@@ -364,12 +363,20 @@ body {
     text-align: center;
 }
 
+#button_answer:hover{
+    background: #2d9dac;
+    transition: all 0.3s ease;
+    transform: translateY(-1px);
+
+}
+
 .next_button {
     display: none;
 }
 
 #date {
     padding-top: 5%;
+    display: none;
 }
 
 #button_reset {
@@ -414,6 +421,7 @@ body {
 }
 
 .solve__button:hover {
+    transition: all 0.3s ease;
     background-color: #00e1ff63;
     transition: transform 250ms;
 }
