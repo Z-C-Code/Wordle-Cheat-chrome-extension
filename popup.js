@@ -169,6 +169,7 @@ function disableButton(dd) {
     }
     else {
         document.getElementById("button_right").disabled = false;
+        document.getElementById("button_left").disabled = false;
         document.getElementById("left").style.background = "white";
         document.getElementById("right").style.background = "white";
         document.getElementById("left").style.cursor = "pointer";
