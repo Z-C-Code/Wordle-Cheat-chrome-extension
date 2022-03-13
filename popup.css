@@ -33,16 +33,21 @@ body {
 
 
 @media screen and (max-width: 960px){
- 
-
- 
+    
  .navbar__button {
+     margin-top: -16.5px;
+     margin-left: 25%;
      padding-bottom: 2rem;
      position: relative;
      text-align: center;
-     margin: 5px auto;
-     height: 80px;
-     width: 60%;
+     /* margin: 5px auto; */
+     height: 50%;
+     width: 50%;
+ }
+ 
+ .navbar__button a {
+     font-size: 25px;
+     font-weight: 500;
  }
 
 }
@@ -313,6 +318,7 @@ body {
 }
 
 #button_reset {
+    margin-top: 5%;
     margin-left: 5%;
     color: #14141400;
     background-color: #14141400;
@@ -366,4 +372,50 @@ body {
 
 .disabled {
     background: rgba(255, 255, 255, 0.171);
+}
+
+.solve__button {
+    margin-left: 32.25%;
+    position: relative;
+    background-image: #141414;
+    border: none;
+    border-radius: 4px;
+    color: #141414;
+    cursor: pointer;
+    transition: all 0.35s;
+    outline: none;
+    background: #40a6b39d;
+    color: #fff;;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.75rem;
+    display: none;
+
+}
+
+
+
+.solve__button:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: all 0.35s;
+    border-radius: 4px;
+    
+}
+
+.solve__button:hover {
+    background-color: #00e1ff63;
+    transition: transform 250ms;
+}
+
+.solve__button:hover:after {
+    width: 100%;
+}
+
+#button_solve {
+    margin-bottom: 20%;
 }

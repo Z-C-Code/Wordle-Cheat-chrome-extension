@@ -52,6 +52,7 @@ let btn_left = document.getElementById("button_left")
 let btn_right = document.getElementById("button_right")
 let btn_answer = document.getElementById("button_answer")
 let btn_reset = document.getElementById("button_reset")
+let btn_solve = document.getElementById("button_solve")
 
 btn_left.addEventListener("click",left);
 btn_right.addEventListener("click",right);
@@ -93,6 +94,7 @@ function answer(){
     btn_left.style.display = "block";
     btn_right.style.display = "block";
     btn_reset.style.display = "block";
+    btn_solve.style.display = "block";
 }
 
 function left(){
@@ -176,3 +178,35 @@ function disableButton(dd) {
         document.getElementById("right").style.cursor = "pointer";
     }
 }
+
+// SOLVE FUNCTION
+
+document.getElementById("button_solve").addEventListener("click", () => {
+    var word_on_screen = document.getElementById("answer").innerText;
+    let answer = word_on_screen
+    let r = answer.split("")
+    chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
+        // r.forEach(element => {
+        //     chrome.scripting.executeScript({
+        //         target: { tabId: tab[0].id }, func: (e)=> {
+                    
+        //             window.dispatchEvent(new KeyboardEvent("keydown", { key: "Backspace" }))
+        //         }
+        //     });
+        // });
+        r.forEach(element => {
+            console.log(element)
+            chrome.scripting.executeScript({
+                target: {tabId: tab[0].id, allFrames: true }, func: (elm) => {
+                    window.dispatchEvent(new KeyboardEvent("keydown", { key:elm}))
+                },args:[element]
+            });
+        });
+        chrome.scripting.executeScript({
+            target: { tabId: tab[0].id, allFrames: true }, func: () => {
+                window.dispatchEvent(new KeyboardEvent("keydown", { key: `Enter` }))
+            }})
+
+    })
+})
+
