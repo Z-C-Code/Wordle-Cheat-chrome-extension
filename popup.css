@@ -17,6 +17,7 @@ body {
 }
 
 #navbar__logo {
+    padding-top: 15px;
     background: #ff8177;
     background-image: linear-gradient(to right, #244352 25%, #00e1ff 80%);
     background-size: 100%;
