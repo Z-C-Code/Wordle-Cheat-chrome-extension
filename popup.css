@@ -11,9 +11,8 @@ body {
     max-height:10px;
 }
 
-
 .navbar__container h1 {
-    margin-left: 20%;
+    margin-left: 25%;
 }
 
 #navbar__logo {
@@ -29,7 +28,7 @@ body {
     align-items: center;
     cursor: default;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 
