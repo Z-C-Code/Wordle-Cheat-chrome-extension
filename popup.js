@@ -55,12 +55,88 @@ let btn_reset = document.getElementById("button_reset")
 let btn_solve = document.getElementById("button_solve")
 let btn_website = document.getElementById("button_website")
 let date = document.getElementById("date")
+let btn_back = document.getElementById("button_back")
+let btn_hint = document.getElementById("button_hint")
 
 btn_left.addEventListener("click",left);
 btn_right.addEventListener("click",right);
 btn_answer.addEventListener("click",answer);
 btn_reset.addEventListener("click",reset);
+btn_back.addEventListener("click",back);
+btn_hint.addEventListener("click",hint)
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+var rand_num = getRandomInt(5);
+// expected output: 0, 1 or 2
+
+var split_word= ((word).split(/(?!$)/u))
+
+function rand_letter() {
+	var rand_num = getRandomInt(5);
+	// expected output: 0, 1 or 2
+	var split_word= ((word).split(/(?!$)/u))
+	if(rand_num == 0) 
+    {
+    	console.log("The first letter of todays wordle is "+split_word[rand_num])
+        document.getElementById("answer").innerHTML = "The first letter is: "+split_word[rand_num].toUpperCase();
+        document.getElementById("answer").style.fontSize = "28px";
+    } else if(rand_num == 1){
+    	console.log("The second letter of todays wordle is "+split_word[rand_num])
+        document.getElementById("answer").innerHTML = "The second letter is: "+split_word[rand_num].toUpperCase();
+        document.getElementById("answer").style.fontSize = "28px";
+    } else if(rand_num == 2){
+    	console.log("The third letter of todays wordle is "+split_word[rand_num])
+        document.getElementById("answer").innerHTML = "The third letter is: "+split_word[rand_num].toUpperCase();
+        document.getElementById("answer").style.fontSize = "28px";
+    } else if(rand_num == 3){
+    	console.log("The forth letter of todays wordle is "+split_word[rand_num])
+        document.getElementById("answer").innerHTML = "The forth letter is: "+split_word[rand_num].toUpperCase();
+        document.getElementById("answer").style.fontSize = "28px";
+    } else if(rand_num == 4){
+    	console.log("The fifth letter of todays wordle is "+split_word[rand_num])
+        document.getElementById("answer").innerHTML = "The fifth letter is: "+split_word[rand_num].toUpperCase();
+        document.getElementById("answer").style.fontSize = "28px";
+    } else {
+    	console.log("Something went wrong")
+        document.getElementById("answer").innerHTML = "Something went wrong";
+        document.getElementById("answer").style.fontSize = "28px";
+    }
+
+	// document.getElementById("answer").innerHTML = split_word[rand_num];
+}
+
+function hint(){
+	console.log("The hint button has been pressed!")
+	btn_hint.innerHTML = "Want another hint?"
+	btn_left.style.display = "none";
+    btn_right.style.display = "none";
+    btn_reset.style.display = "none";
+    btn_solve.style.display = "none";
+    date.style.display = "block";
+    btn_back.style.display = "block";
+    btn_website.style.display = "none";
+    btn_answer.style.display = "none";
+    btn_hint.style.display = "block";
+    rand_letter()
+
+}
+
+function back(){
+	window.location.reload();
+	// document.getElementById("answer").style.display = "none";
+	// btn_answer.style.display = "block";
+ //    btn_left.style.display = "none";
+ //    btn_right.style.display = "none";
+ //    btn_reset.style.display = "none";
+ //    btn_solve.style.display = "none";
+ //    date.style.display = "none";
+ //    btn_back.style.display = "none";
+ //    btn_website.style.display = "block";
+	console.log("Back button has been pressed!")
+}
 
 function reset(){
     document.getElementById("button_right").disabled = false;
@@ -93,13 +169,15 @@ function reset(){
 function answer(){
     console.log("answer button has been clicked!")
     document.getElementById("answer").innerHTML = word;
-    btn_answer.style.display = "none";
     btn_left.style.display = "block";
     btn_right.style.display = "block";
     btn_reset.style.display = "block";
     btn_solve.style.display = "block";
     date.style.display = "block";
+    btn_back.style.display = "block";
     btn_website.style.display = "none";
+    btn_answer.style.display = "none";
+    btn_hint.style.display = "none";
 }
 
 function left(){

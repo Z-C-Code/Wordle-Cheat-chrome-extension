@@ -11,8 +11,9 @@ body {
     max-height:10px;
 }
 
+
 .navbar__container h1 {
-    margin-left: 25%;
+    margin-left: 20%;
 }
 
 #navbar__logo {
@@ -28,7 +29,7 @@ body {
     align-items: center;
     cursor: default;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 40px;
 }
 
 
@@ -203,6 +204,11 @@ body {
         margin-top: -50%;
     }
 
+    .hint__button a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    }
+
 }
 
 #button_left {
@@ -230,7 +236,7 @@ body {
 }
 
 .arr:hover {
-    box-shadow: 0px 0px 15px 15px #00e1ff21;
+    box-shadow: 0px 0px 15px 15px rgba(0, 225, 255, 0.6);
 }
 
 .arr div {
@@ -377,6 +383,7 @@ body {
 #date {
     padding-top: 5%;
     display: none;
+    position: relative;
 }
 
 #button_reset {
@@ -438,4 +445,90 @@ body {
 
 .solve__button a {
     font-size: 25px;
+}
+
+.back div {
+    position: absolute;
+    height: 11.2px;
+    width: 11.2px;
+    border-top: 3.2px solid #202020;
+    border-left: 3.2px solid #202020;
+    transform: rotate(45deg);
+    left: 7.7px;
+    top: 9.8px;
+}
+
+#button_back {
+    position: absolute;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    display: none;
+    color: #3eb09b;
+    background-color: #14141400;
+    border: none;
+    width: 100%;
+}
+
+
+.back {
+    background: #3eb09b;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    transition: 0.4s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.back:hover {
+    box-shadow: 0px 0px 8px 8px rgba(0, 225, 255, 0.4);
+}
+
+.left_back {
+    transform: rotate(-90deg);
+}
+
+
+.hint__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 15px ;
+    height: 60%;
+    width: 60%;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #3d7e86;
+    color: #fff;
+    transition: transform 250ms;
+    /* margin-bottom: -100px; */
+    margin-left: 45px;
+    cursor: pointer;
+    z-index: 2;
+    text-align: center;
+}
+
+.hint__button a {
+    font-family: 'Roboto', sans-serif;
+ }
+
+
+#button_hint {
+    margin-top: 10%;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font: bolder;
+    font-weight: 500;
+    margin-left: 20%;
+    text-align: center;
+}
+
+#button_hint:hover{
+    background: #2d9dac;
+    transition: all 0.3s ease;
+    transform: translateY(-1px);
+
 }
