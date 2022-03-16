@@ -108,6 +108,16 @@ function rand_letter() {
 	// document.getElementById("answer").innerHTML = split_word[rand_num];
 }
 
+const key = "5b488502-ab32-4454-8424-d8abe79e2aaf";
+
+function getDefinition(worda) {
+    fetch(`https://www.dictionaryapi.com/api/v3/references/learners/json/${worda}?key=${key}`)
+    .then(res => res.json())
+    .then(data => document.getElementById("answer").innerHTML = "Hint: "+(data[0]["shortdef"][0]))
+}
+
+ 
+
 function hint(){
 	console.log("The hint button has been pressed!")
 	btn_hint.innerHTML = "Want another hint?"
@@ -119,9 +129,9 @@ function hint(){
     btn_back.style.display = "block";
     btn_website.style.display = "none";
     btn_answer.style.display = "none";
-    btn_hint.style.display = "block";
-    rand_letter()
-
+    btn_hint.style.display = "none";
+    getDefinition(word); 
+    document.getElementById("answer").style.fontSize = "20px";
 }
 
 function back(){

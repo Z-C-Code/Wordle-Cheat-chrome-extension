@@ -1,7 +1,7 @@
 {
   "name": "Wordle++",
-  "description": "This cheat tells you the exact word of the day and also has arrows to change the date which will tell you the word for tommarow",
-  "version": "1.1",
+  "description": "This cheat tells you the exact word of the day and also has arrows to change the date which will tell you the word for tommarow. It also gives you hints on todays wordle to help you solve the puzzle",
+  "version": "2.0",
   "manifest_version": 3,
   "permissions": [
       "activeTab",
