@@ -1,22 +1,35 @@
+:root {
+    --wordle-black: #121213;
+    --wordle-green: #538d4e;
+}
+@font-face {
+    font-family: 'wordle';
+    src: url('/fonts/wordle.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'franklin';
+    src: url('/fonts/franklin.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
 body {
     width: 250px;
-    height: 100px;
+    height: 150px;
     text-align: center;
-    font-family: 'karnakcondensed';
-    background-color: #121213;
-    color: #538d4e;
+    background-color: var(--wordle-black);
+    color: var(--wordle-green);
     padding: 1rem;
 }
 h1 {
-    font-family: 'karnakcondensed';
+    font-family: 'wordle';
+    margin: 0px;
+}
+p {
+    font-family: 'franklin';
     margin: 0px;
 }
 #answer {
     font-size: 6em;
-}
-@font-face {
-    font-family: 'karnakcondensed';
-    src: url('https://www.nytimes.com/games/wordle/fonts/karnakcondensed-normal-700.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
 }

@@ -1,6 +1,13 @@
 {
   "name": "wordle hacker",
   "description": "Find the wordle hacker",
+  "icons": {
+    "16": "/icons/icon-16.png",
+    "32": "/icons/icon-32.png",
+    "48": "/icons/icon-48.png",
+    "128": "/icons/icon-128.png",
+    "500": "/icons/icon-500.png"
+  },
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
@@ -9,7 +16,13 @@
   ],
   "action": {
     "default_title": "wordle hacker",
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/icons/icon-16.png",
+      "32": "/icons/icon-32.png",
+      "48": "/icons/icon-48.png",
+      "128": "/icons/icon-128.png",
+      "500": "/icons/icon-500.png"
+    }
   }
 }

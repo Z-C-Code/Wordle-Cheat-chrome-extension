@@ -4,7 +4,6 @@ var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()
 var oneDay = 1000 * 60 * 60 * 24;
 var date_one = Math.floor(diff / oneDay);
 
-// DATE TWO
 var now1 = new Date("March 11, 2022");
 var start1 = new Date(now.getFullYear(), 0, 0);
 var diff1 = (now1 - start1) + ((start1.getTimezoneOffset() - now1.getTimezoneOffset()) * 60 * 1000);
@@ -17,3 +16,9 @@ const words = ["cigar","rebut","sissy","humph","awake","blush","focal","evade","
 
 const word = (words[265+diffrence])
 document.getElementById("answer").innerHTML = word;
+
+// DIFINE
+const key = "5b488502-ab32-4454-8424-d8abe79e2aaf";
+fetch(`https://www.dictionaryapi.com/api/v3/references/learners/json/${word}?key=${key}`)
+.then(res => res.json())
+.then(data => document.getElementById("def").innerHTML = (data[0]["shortdef"][0]))
