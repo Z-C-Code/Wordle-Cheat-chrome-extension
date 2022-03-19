@@ -1,45 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" id="home">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FunkyPanda</title>
-    <!-- LINKS -->
     <link rel="stylesheet" href="popup.css">
-    <link rel="icon" type="image/png" href="images/icon.png"/>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <!-- SCRIPTS -->
     <script src="popup.js" defer></script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="navbar__container">
-            <button class="back_button" id="button_back"><div id="back" class="back left_back"><div></div></div></button>   
-            <h1 id="navbar__logo" >Wordle ++</h1>      
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="main">
-        <div class="main__container">
-            <div class="main__content">
-                <!-- <h1 id="wordle_today">Todays wordle is..</h1> -->
-                <p id="date"></p>
-                <button id="button_answer" class="answer__button"><a>Click Me <br>(Answer)<br></a></button>
-                <button id="button_hint" class="hint__button"><a id="hint_a">Want a hint instead?</a></button>
-                <h2 id="answer"></h2>
-                <button class="next_button" id="button_right"><div id="right" class="arr right"><div></div></div></button>
-                <button class="next_button" id="button_left"><div id="left" class="arr left"><div></div></div></button>
-                <button class="solve__button" id="button_solve"><a>Solve</a></button>
-                <button id="button_reset"><li class="navbar__button"><a class="button">Reset</a></li></button>
-                <button id="button_website" class="main__button"><a id="button_website" href="https://funkypanda.netlify.app/" target="_blank">My Website</a></button>
-            </div>
-        </div>
-    </div>
-
+    <h1 id="wordle_today">Todays wordle is</h1>
+    <h1 id="answer"></h1>
 </body>
 </html>
