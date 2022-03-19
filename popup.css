@@ -29,6 +29,7 @@ h1 {
 p {
     font-family: 'franklin';
     margin: 0px;
+    margin-bottom: 1ch;
 }
 #answer {
     font-size: 6em;
