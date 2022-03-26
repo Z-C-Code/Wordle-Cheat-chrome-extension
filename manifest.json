@@ -8,7 +8,7 @@
     "128": "/icons/icon-128.png",
     "500": "/icons/icon-500.png"
   },
-  "version": "1.2",
+  "version": "1.3",
   "manifest_version": 3,
   "permissions": [
       "activeTab",

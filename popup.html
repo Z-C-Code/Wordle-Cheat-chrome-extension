@@ -6,9 +6,15 @@
     <script src="popup.js" defer></script>
 </head>
 <body>
-    <h1 id="wordle_today">Todays wordle is</h1>
-    <h1 id="answer">--</h1>
-    <p id="def">--</p>
-    <button id="solve">Auto Solve</button>
+    <div id="not-on-wordle">
+        <h1>You are not on Wordle</h1>
+        <a class="button" href="https://www.nytimes.com/games/wordle/index.html" target="_blank">Open Wordle</a>
+    </div>
+    <div id="on-wordle">
+        <h1 id="wordle_today">Todays wordle is</h1>
+        <h1 id="answer">--</h1>
+        <p id="def">--</p>
+        <button id="solve">Auto Solve</button>
+    </div>
 </body>
 </html>
