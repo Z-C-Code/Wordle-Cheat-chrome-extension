@@ -1,4 +1,4 @@
-var word = 
+var word = ""
 
 document.addEventListener('DOMContentLoaded', () => {
     try {
@@ -20,40 +20,25 @@ function getlocalData(tab) {
             document.getElementById("not-on-wordle").style.display = "block"
             return;
         }
-        result = JSON.parse(result)
-        answer.innerText = result.solution
-        word = result.solution
+        word = JSON.parse(result).solution
+        document.getElementById("answer").innerHTML = word;
+        
+        // DIFINE
+        const key = "5b488502-ab32-4454-8424-d8abe79e2aaf";
+        fetch(`https://www.dictionaryapi.com/api/v3/references/learners/json/${word}?key=${key}`)
+            .then(res => res.json())
+            .then(data => document.getElementById("def").innerHTML = (data[0]["shortdef"][0]))
     });
 }
 
-document.getElementById("answer").innerHTML = word;
-
-// DIFINE
-const key = "5b488502-ab32-4454-8424-d8abe79e2aaf";
-fetch(`https://www.dictionaryapi.com/api/v3/references/learners/json/${word}?key=${key}`)
-    .then(res => res.json())
-    .then(data => document.getElementById("def").innerHTML = (data[0]["shortdef"][0]))
-
 // AUTO SOLVE
 document.getElementById("solve").addEventListener("click", () => {
-    var word_on_screen = document.getElementById("answer").innerText;
-    let answer = word_on_screen
-    let r = answer.split("")
     chrome.tabs.query({ active: true, currentWindow: true }, (tab) => {
-        r.forEach(element => {
+        word.split("").forEach(letter => {
             chrome.scripting.executeScript({
-                target: { tabId: tab[0].id }, func: (e) => {
-
-                    window.dispatchEvent(new KeyboardEvent("keydown", { key: "Backspace" }))
-                }
-            });
-        });
-        r.forEach(element => {
-            console.log(element)
-            chrome.scripting.executeScript({
-                target: { tabId: tab[0].id, allFrames: true }, func: (elm) => {
-                    window.dispatchEvent(new KeyboardEvent("keydown", { key: elm }))
-                }, args: [element]
+                target: { tabId: tab[0].id, allFrames: true }, func: (key) => {
+                    window.dispatchEvent(new KeyboardEvent("keydown", { key: key }))
+                }, args: [letter]
             });
         });
         chrome.scripting.executeScript({
@@ -61,6 +46,5 @@ document.getElementById("solve").addEventListener("click", () => {
                 window.dispatchEvent(new KeyboardEvent("keydown", { key: `Enter` }))
             }
         })
-
     })
 })
