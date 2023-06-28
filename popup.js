@@ -1,37 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-    try {
-        // Get the current tab
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            getlocalData(tabs)
-        });
-    }
-    catch (err) {
-    }
-});
+// Word needs to be global
+var word;
 
-function getlocalData(tab) {
-    chrome.scripting.executeScript({ target: { tabId: tab[0].id, allFrames: true }, func: () => { return localStorage.getItem("nyt-wordle-state") } }, (result) => {
-        if (result) {
-            result = result[0].result
+// Create the URL with the date in it
+function getUrl() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const url = `https://www.nytimes.com/svc/wordle/v2/${year}-${month}-${day}.json`;
+    return url;
+}
+
+// Fetch that URL and get the solution
+fetch(getUrl())
+    .then(res => {
+        if (res.status !== 200) {
+        throw new Error("Request failed with status " + res.status);
         }
-        if (!result) {
-            document.getElementById("on-wordle").style.display = "none"
-            document.getElementById("not-on-wordle").style.display = "block"
-            return;
-        }
-        word = JSON.parse(result).solution
+        return res.json();
+    })
+    .then(data => {
+        word = data.solution;
         document.getElementById("answer").innerHTML = word;
-        difine()
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        document.getElementById("on-wordle").style.display = "none";
+        document.getElementById("not-on-wordle").style.display = "block";
     });
-}
-
-// DIFINE
-function difine() {
-    const key = "5b488502-ab32-4454-8424-d8abe79e2aaf";
-    fetch('https://www.dictionaryapi.com/api/v3/references/learners/json/' + word + '?key=' + key)
-    .then(res => res.json())
-    .then(data => document.getElementById("def").innerHTML = (data[0]["shortdef"][0]))
-}
 
 // AUTO SOLVE
 document.getElementById("solve").addEventListener("click", () => {
